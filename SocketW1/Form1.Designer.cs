@@ -36,6 +36,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnBeginListen = new System.Windows.Forms.Button();
             this.lbOnline = new System.Windows.Forms.ListBox();
+            this.txtMsgSend = new System.Windows.Forms.TextBox();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.btnSendToAll = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtMsg
@@ -106,11 +109,42 @@
             this.lbOnline.Size = new System.Drawing.Size(158, 124);
             this.lbOnline.TabIndex = 8;
             // 
+            // txtMsgSend
+            // 
+            this.txtMsgSend.Location = new System.Drawing.Point(12, 175);
+            this.txtMsgSend.Multiline = true;
+            this.txtMsgSend.Name = "txtMsgSend";
+            this.txtMsgSend.Size = new System.Drawing.Size(158, 63);
+            this.txtMsgSend.TabIndex = 9;
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(205, 175);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.TabIndex = 10;
+            this.btnSend.Text = "发送消息";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // btnSendToAll
+            // 
+            this.btnSendToAll.Location = new System.Drawing.Point(205, 215);
+            this.btnSendToAll.Name = "btnSendToAll";
+            this.btnSendToAll.Size = new System.Drawing.Size(75, 23);
+            this.btnSendToAll.TabIndex = 11;
+            this.btnSendToAll.Text = "群发消息";
+            this.btnSendToAll.UseVisualStyleBackColor = true;
+            this.btnSendToAll.Click += new System.EventHandler(this.btnSendToAll_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 275);
+            this.Controls.Add(this.btnSendToAll);
+            this.Controls.Add(this.btnSend);
+            this.Controls.Add(this.txtMsgSend);
             this.Controls.Add(this.lbOnline);
             this.Controls.Add(this.btnBeginListen);
             this.Controls.Add(this.label2);
@@ -136,6 +170,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBeginListen;
         private System.Windows.Forms.ListBox lbOnline;
+        private System.Windows.Forms.TextBox txtMsgSend;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Button btnSendToAll;
     }
 }
 

@@ -19,6 +19,7 @@ namespace SocketW1
         public Form1()
         {
             InitializeComponent();
+            TextBox.CheckForIllegalCrossThreadCalls = false;
 
             GetIp();
         }
@@ -143,6 +144,41 @@ namespace SocketW1
                 }
                
             }
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            string strMsg = "服务器" + "\r\n" + "   -->" + txtMsgSend.Text.Trim() + "\r\n";
+            byte[] arrMsg = System.Text.Encoding.UTF8.GetBytes(strMsg); // 将要发送的字符串转换成Utf-8字节数组；
+            byte[] arrSendMsg = new byte[arrMsg.Length + 1];
+            arrSendMsg[0] = 0; // 表示发送的是消息数据
+            Buffer.BlockCopy(arrMsg, 0, arrSendMsg, 1, arrMsg.Length);
+            string strKey = "";
+            strKey = lbOnline.Text.Trim();
+            if (string.IsNullOrEmpty(strKey))   // 判断是不是选择了发送的对象；
+            {
+                MessageBox.Show("请选择你要发送的好友！！！");
+            }
+            else
+            {
+                dict[strKey].Send(arrSendMsg);// 解决了 sokConnection是局部变量，不能再本函数中引用的问题；
+                ShowMsg(strMsg);
+                txtMsgSend.Clear();
+            }
+
+        }
+
+        private void btnSendToAll_Click(object sender, EventArgs e)
+        {
+            string strMsg = "服务器" + "\r\n" + "   -->" + txtMsgSend.Text.Trim() + "\r\n";
+            byte[] arrMsg = System.Text.Encoding.UTF8.GetBytes(strMsg); // 将要发送的字符串转换成Utf-8字节数组；
+            foreach (Socket s in dict.Values)
+            {
+                s.Send(arrMsg);
+            }
+            ShowMsg(strMsg);
+            txtMsgSend.Clear();
+            ShowMsg(" 群发完毕～～～");
         }
 
 
