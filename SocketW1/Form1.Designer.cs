@@ -80,6 +80,7 @@
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(100, 21);
             this.txtPort.TabIndex = 4;
+            this.txtPort.Text = "8080";
             // 
             // label2
             // 

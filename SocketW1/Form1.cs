@@ -137,9 +137,9 @@ namespace SocketW1
                     lbOnline.Items.Remove(sokClient.RemoteEndPoint.ToString());
                     break;
                 }
-                if (arrMsgRec[0] == 0)  // 表示接收到的是数据；
+                if (arrMsgRec[0] == ':')  // 表示接收到的是数据；
                 {
-                    string strMsg = System.Text.Encoding.UTF8.GetString(arrMsgRec, 1, length - 1);// 将接受到的字节数据转化成字符串；
+                    string strMsg = System.Text.Encoding.UTF8.GetString(arrMsgRec, 0, length);// 将接受到的字节数据转化成字符串；
                     ShowMsg(strMsg);
                 }
                
