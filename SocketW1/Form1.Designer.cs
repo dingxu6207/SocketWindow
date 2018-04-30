@@ -36,17 +36,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnBeginListen = new System.Windows.Forms.Button();
             this.lbOnline = new System.Windows.Forms.ListBox();
-            this.txtMsgSend = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnSendToAll = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnOpen = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnToAllClose = new System.Windows.Forms.Button();
+            this.txtNote = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtMsg
             // 
-            this.txtMsg.Location = new System.Drawing.Point(12, 12);
+            this.txtMsg.Location = new System.Drawing.Point(12, 28);
             this.txtMsg.Multiline = true;
             this.txtMsg.Name = "txtMsg";
-            this.txtMsg.Size = new System.Drawing.Size(343, 118);
+            this.txtMsg.Size = new System.Drawing.Size(159, 66);
             this.txtMsg.TabIndex = 0;
             // 
             // label1
@@ -93,7 +102,7 @@
             // 
             // btnBeginListen
             // 
-            this.btnBeginListen.Location = new System.Drawing.Point(384, 239);
+            this.btnBeginListen.Location = new System.Drawing.Point(384, 240);
             this.btnBeginListen.Name = "btnBeginListen";
             this.btnBeginListen.Size = new System.Drawing.Size(135, 23);
             this.btnBeginListen.TabIndex = 7;
@@ -110,42 +119,114 @@
             this.lbOnline.Size = new System.Drawing.Size(158, 124);
             this.lbOnline.TabIndex = 8;
             // 
-            // txtMsgSend
-            // 
-            this.txtMsgSend.Location = new System.Drawing.Point(12, 175);
-            this.txtMsgSend.Multiline = true;
-            this.txtMsgSend.Name = "txtMsgSend";
-            this.txtMsgSend.Size = new System.Drawing.Size(158, 63);
-            this.txtMsgSend.TabIndex = 9;
-            // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(205, 175);
+            this.btnSend.Location = new System.Drawing.Point(194, 71);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.Size = new System.Drawing.Size(100, 23);
             this.btnSend.TabIndex = 10;
-            this.btnSend.Text = "发送消息";
+            this.btnSend.Text = "获取";
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // btnSendToAll
             // 
-            this.btnSendToAll.Location = new System.Drawing.Point(205, 215);
+            this.btnSendToAll.Location = new System.Drawing.Point(25, 31);
             this.btnSendToAll.Name = "btnSendToAll";
             this.btnSendToAll.Size = new System.Drawing.Size(75, 23);
             this.btnSendToAll.TabIndex = 11;
-            this.btnSendToAll.Text = "群发消息";
+            this.btnSendToAll.Text = "开侧窗";
             this.btnSendToAll.UseVisualStyleBackColor = true;
             this.btnSendToAll.Click += new System.EventHandler(this.btnSendToAll_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 12);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "状态信息";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnClose);
+            this.groupBox1.Controls.Add(this.btnOpen);
+            this.groupBox1.Location = new System.Drawing.Point(15, 109);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(279, 72);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "相应侧窗控制";
+            // 
+            // btnOpen
+            // 
+            this.btnOpen.Location = new System.Drawing.Point(25, 33);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(75, 23);
+            this.btnOpen.TabIndex = 0;
+            this.btnOpen.Text = "开侧窗";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(149, 33);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "关侧窗";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnToAllClose);
+            this.groupBox2.Controls.Add(this.btnSendToAll);
+            this.groupBox2.Location = new System.Drawing.Point(15, 187);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(279, 73);
+            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "整体侧窗控制";
+            // 
+            // btnToAllClose
+            // 
+            this.btnToAllClose.Location = new System.Drawing.Point(149, 31);
+            this.btnToAllClose.Name = "btnToAllClose";
+            this.btnToAllClose.Size = new System.Drawing.Size(75, 23);
+            this.btnToAllClose.TabIndex = 12;
+            this.btnToAllClose.Text = "关侧窗";
+            this.btnToAllClose.UseVisualStyleBackColor = true;
+            this.btnToAllClose.Click += new System.EventHandler(this.btnToAllClose_Click);
+            // 
+            // txtNote
+            // 
+            this.txtNote.Location = new System.Drawing.Point(194, 40);
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(100, 21);
+            this.txtNote.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(192, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "侧窗号：";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 275);
-            this.Controls.Add(this.btnSendToAll);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtNote);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSend);
-            this.Controls.Add(this.txtMsgSend);
             this.Controls.Add(this.lbOnline);
             this.Controls.Add(this.btnBeginListen);
             this.Controls.Add(this.label2);
@@ -156,6 +237,8 @@
             this.Controls.Add(this.txtMsg);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,9 +254,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBeginListen;
         private System.Windows.Forms.ListBox lbOnline;
-        private System.Windows.Forms.TextBox txtMsgSend;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Button btnSendToAll;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnOpen;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnToAllClose;
+        private System.Windows.Forms.TextBox txtNote;
+        private System.Windows.Forms.Label label4;
     }
 }
 

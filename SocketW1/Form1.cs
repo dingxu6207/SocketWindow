@@ -137,22 +137,26 @@ namespace SocketW1
                     lbOnline.Items.Remove(sokClient.RemoteEndPoint.ToString());
                     break;
                 }
-                if (arrMsgRec[0] == ':')  // 表示接收到的是数据；
-                {
-                    string strMsg = System.Text.Encoding.UTF8.GetString(arrMsgRec, 0, length);// 将接受到的字节数据转化成字符串；
-                    ShowMsg(strMsg);
-                }
+                //if (arrMsgRec[0] == ':')  // 表示接收到的是数据；
+                //{
+                  string strMsg = System.Text.Encoding.UTF8.GetString(arrMsgRec, 0, length);// 将接受到的字节数据转化成字符串；
+                  ShowMsg(strMsg);
+                //}
+                  if (strMsg[2] == 'N')
+                  {
+                      txtNote.Text = strMsg.Substring(3, strMsg.Length - 4);
+                  }
                
             }
         }
 
-        private void btnSend_Click(object sender, EventArgs e)
+        void SendCmdMsg(string CmdMsg)
         {
-            string strMsg = "服务器" + "\r\n" + "   -->" + txtMsgSend.Text.Trim() + "\r\n";
-            byte[] arrMsg = System.Text.Encoding.UTF8.GetBytes(strMsg); // 将要发送的字符串转换成Utf-8字节数组；
+
+            byte[] arrMsg = System.Text.Encoding.UTF8.GetBytes(CmdMsg); // 将要发送的字符串转换成Utf-8字节数组；
             byte[] arrSendMsg = new byte[arrMsg.Length + 1];
-            arrSendMsg[0] = 0; // 表示发送的是消息数据
-            Buffer.BlockCopy(arrMsg, 0, arrSendMsg, 1, arrMsg.Length);
+
+            Buffer.BlockCopy(arrMsg, 0, arrSendMsg, 0, arrMsg.Length);
             string strKey = "";
             strKey = lbOnline.Text.Trim();
             if (string.IsNullOrEmpty(strKey))   // 判断是不是选择了发送的对象；
@@ -162,23 +166,54 @@ namespace SocketW1
             else
             {
                 dict[strKey].Send(arrSendMsg);// 解决了 sokConnection是局部变量，不能再本函数中引用的问题；
-                ShowMsg(strMsg);
-                txtMsgSend.Clear();
+                ShowMsg(CmdMsg);
+
             }
+            
+        }
+
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            string strMsg = ":F?#";
+            SendCmdMsg(strMsg);
 
         }
 
-        private void btnSendToAll_Click(object sender, EventArgs e)
+        void SendMsgToAll(string AllMsgCmd)
         {
-            string strMsg = "服务器" + "\r\n" + "   -->" + txtMsgSend.Text.Trim() + "\r\n";
-            byte[] arrMsg = System.Text.Encoding.UTF8.GetBytes(strMsg); // 将要发送的字符串转换成Utf-8字节数组；
+            byte[] arrMsg = System.Text.Encoding.UTF8.GetBytes(AllMsgCmd); // 将要发送的字符串转换成Utf-8字节数组；
             foreach (Socket s in dict.Values)
             {
                 s.Send(arrMsg);
             }
-            ShowMsg(strMsg);
-            txtMsgSend.Clear();
+            ShowMsg(AllMsgCmd);
+            
             ShowMsg(" 群发完毕～～～");
+        }
+
+        private void btnSendToAll_Click(object sender, EventArgs e)
+        {
+            string strMsg = ":FO#";
+            SendMsgToAll(strMsg);
+        }
+
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            string strMsg = ":F+#";
+            SendCmdMsg(strMsg);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            string strMsg = ":F-#";
+            SendCmdMsg(strMsg);
+        }
+
+        private void btnToAllClose_Click(object sender, EventArgs e)
+        {
+            string strMsg = ":FC#";
+            SendMsgToAll(strMsg);
         }
 
 
