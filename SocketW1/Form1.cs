@@ -154,7 +154,7 @@ namespace SocketW1
         {
 
             byte[] arrMsg = System.Text.Encoding.UTF8.GetBytes(CmdMsg); // 将要发送的字符串转换成Utf-8字节数组；
-            byte[] arrSendMsg = new byte[arrMsg.Length + 1];
+            byte[] arrSendMsg = new byte[arrMsg.Length];
 
             Buffer.BlockCopy(arrMsg, 0, arrSendMsg, 0, arrMsg.Length);
             string strKey = "";
