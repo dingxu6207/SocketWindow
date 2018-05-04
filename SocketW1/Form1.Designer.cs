@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtMsg = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIp = new System.Windows.Forms.TextBox();
@@ -40,8 +41,8 @@
             this.btnSendToAll = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnOpen = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnOpen = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnToAllClose = new System.Windows.Forms.Button();
             this.txtNote = new System.Windows.Forms.TextBox();
@@ -159,16 +160,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "相应侧窗控制";
             // 
-            // btnOpen
-            // 
-            this.btnOpen.Location = new System.Drawing.Point(25, 33);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(75, 23);
-            this.btnOpen.TabIndex = 0;
-            this.btnOpen.Text = "开侧窗";
-            this.btnOpen.UseVisualStyleBackColor = true;
-            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
-            // 
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(149, 33);
@@ -178,6 +169,16 @@
             this.btnClose.Text = "关侧窗";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnOpen
+            // 
+            this.btnOpen.Location = new System.Drawing.Point(25, 33);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(75, 23);
+            this.btnOpen.TabIndex = 0;
+            this.btnOpen.Text = "开侧窗";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // groupBox2
             // 
@@ -235,8 +236,9 @@
             this.Controls.Add(this.txtIp);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtMsg);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "侧窗控制";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);

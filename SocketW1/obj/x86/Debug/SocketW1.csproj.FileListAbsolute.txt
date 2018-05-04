@@ -1,8 +1,8 @@
-E:\c#_test\socket\test1\SocketW1\SocketW1\bin\Debug\SocketW1.exe
-E:\c#_test\socket\test1\SocketW1\SocketW1\bin\Debug\SocketW1.pdb
 E:\c#_test\socket\test1\SocketW1\SocketW1\obj\x86\Debug\SocketW1.Form1.resources
-E:\c#_test\socket\test1\SocketW1\SocketW1\obj\x86\Debug\SocketW1.Properties.Resources.resources
 E:\c#_test\socket\test1\SocketW1\SocketW1\obj\x86\Debug\SocketW1.csproj.GenerateResource.Cache
-E:\c#_test\socket\test1\SocketW1\SocketW1\obj\x86\Debug\SocketW1.exe
-E:\c#_test\socket\test1\SocketW1\SocketW1\obj\x86\Debug\SocketW1.pdb
 E:\c#_test\socket\test1\SocketW1\SocketW1\obj\x86\Debug\SocketW1.csprojResolveAssemblyReference.cache
+E:\c#_test\socket\test1\SocketW1\SocketW1\bin\Debug\SocketWindow.exe
+E:\c#_test\socket\test1\SocketW1\SocketW1\bin\Debug\SocketWindow.pdb
+E:\c#_test\socket\test1\SocketW1\SocketW1\obj\x86\Debug\SocketWindow.Properties.Resources.resources
+E:\c#_test\socket\test1\SocketW1\SocketW1\obj\x86\Debug\SocketWindow.exe
+E:\c#_test\socket\test1\SocketW1\SocketW1\obj\x86\Debug\SocketWindow.pdb
