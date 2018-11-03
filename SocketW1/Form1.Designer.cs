@@ -47,8 +47,14 @@
             this.btnToAllClose = new System.Windows.Forms.Button();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textSpeed = new System.Windows.Forms.TextBox();
+            this.BtnSpeed = new System.Windows.Forms.Button();
+            this.BtnDistance = new System.Windows.Forms.Button();
+            this.textSpace = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtMsg
@@ -132,7 +138,7 @@
             // 
             // btnSendToAll
             // 
-            this.btnSendToAll.Location = new System.Drawing.Point(25, 31);
+            this.btnSendToAll.Location = new System.Drawing.Point(6, 29);
             this.btnSendToAll.Name = "btnSendToAll";
             this.btnSendToAll.Size = new System.Drawing.Size(75, 23);
             this.btnSendToAll.TabIndex = 11;
@@ -155,14 +161,14 @@
             this.groupBox1.Controls.Add(this.btnOpen);
             this.groupBox1.Location = new System.Drawing.Point(15, 109);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(279, 72);
+            this.groupBox1.Size = new System.Drawing.Size(175, 54);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "相应侧窗控制";
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(149, 33);
+            this.btnClose.Location = new System.Drawing.Point(87, 20);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 1;
@@ -172,7 +178,7 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(25, 33);
+            this.btnOpen.Location = new System.Drawing.Point(6, 20);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(75, 23);
             this.btnOpen.TabIndex = 0;
@@ -184,16 +190,16 @@
             // 
             this.groupBox2.Controls.Add(this.btnToAllClose);
             this.groupBox2.Controls.Add(this.btnSendToAll);
-            this.groupBox2.Location = new System.Drawing.Point(15, 187);
+            this.groupBox2.Location = new System.Drawing.Point(15, 169);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(279, 73);
+            this.groupBox2.Size = new System.Drawing.Size(175, 73);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "整体侧窗控制";
             // 
             // btnToAllClose
             // 
-            this.btnToAllClose.Location = new System.Drawing.Point(149, 31);
+            this.btnToAllClose.Location = new System.Drawing.Point(87, 29);
             this.btnToAllClose.Name = "btnToAllClose";
             this.btnToAllClose.Size = new System.Drawing.Size(75, 23);
             this.btnToAllClose.TabIndex = 12;
@@ -217,11 +223,61 @@
             this.label4.TabIndex = 16;
             this.label4.Text = "侧窗号：";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.BtnDistance);
+            this.groupBox3.Controls.Add(this.textSpace);
+            this.groupBox3.Controls.Add(this.BtnSpeed);
+            this.groupBox3.Controls.Add(this.textSpeed);
+            this.groupBox3.Location = new System.Drawing.Point(196, 109);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(162, 133);
+            this.groupBox3.TabIndex = 17;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "信息设置";
+            // 
+            // textSpeed
+            // 
+            this.textSpeed.Location = new System.Drawing.Point(7, 32);
+            this.textSpeed.Name = "textSpeed";
+            this.textSpeed.Size = new System.Drawing.Size(73, 21);
+            this.textSpeed.TabIndex = 0;
+            this.textSpeed.Text = "100";
+            // 
+            // BtnSpeed
+            // 
+            this.BtnSpeed.Location = new System.Drawing.Point(87, 32);
+            this.BtnSpeed.Name = "BtnSpeed";
+            this.BtnSpeed.Size = new System.Drawing.Size(69, 23);
+            this.BtnSpeed.TabIndex = 1;
+            this.BtnSpeed.Text = "SetSpeed";
+            this.BtnSpeed.UseVisualStyleBackColor = true;
+            this.BtnSpeed.Click += new System.EventHandler(this.BtnSpeed_Click);
+            // 
+            // BtnDistance
+            // 
+            this.BtnDistance.Location = new System.Drawing.Point(87, 71);
+            this.BtnDistance.Name = "BtnDistance";
+            this.BtnDistance.Size = new System.Drawing.Size(69, 23);
+            this.BtnDistance.TabIndex = 3;
+            this.BtnDistance.Text = "SetSpace";
+            this.BtnDistance.UseVisualStyleBackColor = true;
+            this.BtnDistance.Click += new System.EventHandler(this.BtnDistance_Click);
+            // 
+            // textSpace
+            // 
+            this.textSpace.Location = new System.Drawing.Point(6, 71);
+            this.textSpace.Name = "textSpace";
+            this.textSpace.Size = new System.Drawing.Size(73, 21);
+            this.textSpace.TabIndex = 2;
+            this.textSpace.Text = "1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 275);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNote);
             this.Controls.Add(this.groupBox2);
@@ -241,6 +297,8 @@
             this.Text = "侧窗控制";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,6 +324,11 @@
         private System.Windows.Forms.Button btnToAllClose;
         private System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button BtnDistance;
+        private System.Windows.Forms.TextBox textSpace;
+        private System.Windows.Forms.Button BtnSpeed;
+        private System.Windows.Forms.TextBox textSpeed;
     }
 }
 

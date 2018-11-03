@@ -216,6 +216,18 @@ namespace SocketW1
             SendMsgToAll(strMsg);
         }
 
+        private void BtnSpeed_Click(object sender, EventArgs e)
+        {
+            string strMsg = ":FV"+textSpeed.Text+"#";
+            SendCmdMsg(strMsg);
+        }
+
+        private void BtnDistance_Click(object sender, EventArgs e)
+        {
+            string strMsg = ":FS" + textSpace.Text+"#";
+            SendCmdMsg(strMsg);
+        }
+
 
     }
 }
